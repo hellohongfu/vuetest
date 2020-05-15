@@ -1,6 +1,14 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    {{user}}
+    <h2>test</h2>
+
+    <ol>
+    <li v-for="(value,key,index) in user" :key="index">
+        NO:  {{index+1}}  {{key}}:{{value}}
+    </li>
+  </ol>
     <!--
     <h2  v-for="(value,key,index) in user">
          {{index}}- {{key}}:{{value}}
@@ -8,6 +16,7 @@
       -->
     
    
+
   </div>
 </template>
 
@@ -22,7 +31,7 @@ export default {
 
     return {
 
-      user:{name:"" ,age:32, agender:0, skills:["C#","Dynamics 365","Asp.net core"]}
+      user:{name:"hellohongfu" ,age:32, agender:0, skills:["C#","Dynamics 365","Asp.net core"]}
     }
   }
 }
