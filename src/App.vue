@@ -4,6 +4,7 @@
     <HelloWorld msg="Welcome to Your Vue.js App" data=""  />
   <test></test>
   <ifelse msg="测试IF ELSE"></ifelse>
+  <forjs msg="forjs ELSE"></forjs>
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import test from './components/test.vue'
 import ifelse from './components/ifelse.vue'
+import forjs from './components/forjs.vue'
 
 export default {
   name: 'App',
@@ -19,6 +21,7 @@ export default {
     
     ,test
     ,ifelse
+    ,forjs
   }
 }
 </script>
