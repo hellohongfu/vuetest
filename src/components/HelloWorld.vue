@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg|capitalize|reverse }}</h1>
    
     <h2>用户信息</h2>
 
@@ -8,6 +8,9 @@
     <li v-for="(value,key,index) in user" :key="index">
         NO:  {{index+1}}  {{key}}:{{value}}
     </li>
+
+    <label for="username">姓名</label><input name="username" v-model="user.name">
+
   </ol>
     <!--
     <h2  v-for="(value,key,index) in user">
@@ -49,8 +52,28 @@
         <pre>
           
           <a v-bind:href="url">必应才是最好的搜索</a>
+          <a v-on:click="doSomething
+          ">点击查看效果</a>
         </pre>
      </p>
+     
+      <h2>修饰符</h2>
+      <form  v-on:submit.prevent="onSubmit">
+        <input v-model="url" />
+      </form>
+
+       <h2>用户输入</h2>
+      <div>
+        <input v-model="msg" />
+      </div>
+
+      <h2>缩写</h2>
+      
+      <div>
+        <input v-model="url2" />
+        <a :href="url2" target="blank" >https://www.bing.com</a>
+        <a @click="doSomething" >doSomething</a>
+      </div>
   </div>
 </template>
 
@@ -73,6 +96,8 @@ export default {
        ,id:"div_test1"
        ,cansee:true
        ,url:"https://www.bing.com"
+       ,url2:"https://www.bing.com"
+
     }
   
   },
@@ -84,6 +109,21 @@ export default {
       }
 
 
+    }
+    ,filters:{
+
+      capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+    ,    reverse: function (value) {
+      if (!value) return ''
+      value = value.toString()
+
+      return value.split(' ').reverse().join('');
+     
+    }
     }
 }
 
