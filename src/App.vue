@@ -1,27 +1,23 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App" data=""  />
-  <test></test>
-  <ifelse msg="测试IF ELSE"></ifelse>
-  <forjs msg="forjs ELSE"></forjs>
+  <computedjs msg="computed DEMO"></computedjs>
+
+  <img alt="Vue logo" src="./assets/logo.png">
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import test from './components/test.vue'
-import ifelse from './components/ifelse.vue'
-import forjs from './components/forjs.vue'
+
+
+import computedjs from './components/computedjs.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-    
-    ,test
-    ,ifelse
-    ,forjs
+   
+    computedjs
   }
 }
 </script>
