@@ -5,7 +5,7 @@
     <button  @click="doSomething"  title="增加学员" >增加学员</button>
 
     <ul>
-            <li v-for="(name,index) in users" :key="name" >
+            <li v-for="(name,index) in users" :key="index" >
                 {{name}}{{index}}<a @click="remove({index})">移除学员</a>
             </li>
     </ul>
@@ -13,7 +13,7 @@
 </template>
 <script>
 export default {
-    name:"学习 for 循环",
+    name:"forlearn",
     props:{ 
         msg:String
     },

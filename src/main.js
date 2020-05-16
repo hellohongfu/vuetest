@@ -8,8 +8,16 @@ Vue.use(VideoPlayer);
 
 //router
 import VueRouter from 'vue-router'
-
 Vue.use(VueRouter)
+
+// npm install axios
+import axios from 'axios'
+
+//
+
+axios.defaults.baseURL = '/api'  //关键代码
+
+Vue.use(axios);
 
 
 
@@ -17,6 +25,8 @@ import computedjs from './components/computedjs.vue'
 import forjs from './components/forjs.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import ifelse from './components/ifelse.vue'
+import ajaxdemo from './components/ajaxdemo.vue'
+
 
 
 // 2. 定义路由
@@ -29,7 +39,9 @@ const routes = [
   { path: '/forjs/:id', component: forjs ,name:"forjs"},
   { path: '/ifelse/:id', component: ifelse,name:"ifelse" }
   , { path: '/HelloWorld/:id', component: HelloWorld ,name:"HelloWorld"}
+  , { path: '/ajaxdemo/:id', component: ajaxdemo ,name:"ajaxdemo"}
 ]
+
 
 // 3. 创建 router 实例，然后传 `routes` 配置
 // 你还可以传别的配置参数, 不过先这么简单着吧。

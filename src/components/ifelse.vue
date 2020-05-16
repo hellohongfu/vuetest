@@ -4,6 +4,7 @@
     <h2> IFLSE 测试页面{{message}}</h2>
        
 
+       环境变量:{{}} <br>
       id: {{this.$route.params.id}}
          <br>
          isTrue:{{isTrue}}
@@ -32,7 +33,7 @@
 <script>
 export default{
 
-    name:"条件循环",
+    name:"ifelse",
     props:{msg:String}
     ,data:function(){
         return {
@@ -44,6 +45,8 @@ export default{
     ,methods:{
         doSomething:function(){
             this.isTrue=!this.isTrue;
+
+            console.log(process.env.VUE_APP_TITLE)
             if(this.dis==0){
             this.dis=1;
 

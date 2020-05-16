@@ -10,10 +10,12 @@
     <!-- 使用 router-link 组件来导航. -->
     <!-- 通过传入 `to` 属性指定链接. -->
     <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-    <router-link :to="{ name: 'HelloWorld', params: { id: 123 }}">HelloWorld</router-link>
-    <router-link to="/ifelse">ifelse</router-link>|
-    <router-link to="/computedjs">computedjs</router-link>|
-    <router-link to="/forjs">forjs</router-link>|
+    <router-link :to="{ name: 'HelloWorld', params: { id: 123 }}">HelloWorld</router-link>|
+    <router-link :to="{ name: 'ajaxdemo', params: { id: 123 }}">ajaxdemo</router-link>|
+
+    <router-link :to="{ name: 'ifelse', params: { id: 123 }}">ifelse</router-link>|
+    <router-link :to="{ name: 'computedjs', params: { id: 123 }}">computedjs</router-link>|
+    <router-link :to="{ name: 'forjs', params: { id: 123 }}">forjs</router-link>|
 
   </p>
   <!-- 路由出口 -->
