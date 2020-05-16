@@ -1,7 +1,10 @@
 <template>
 
 <div>
-         IFLSE 测试页面{{message}}
+    <h2> IFLSE 测试页面{{message}}</h2>
+       
+
+      id: {{this.$route.params.id}}
          <br>
          isTrue:{{isTrue}}
           <br>

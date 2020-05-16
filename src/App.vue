@@ -1,23 +1,51 @@
 <template>
   <div id="app">
-  <computedjs msg="computed DEMO"></computedjs>
+ 
+ <h1>Hello App!</h1>
+ <p>
+    路由参数 id:{{this.$route.params.id}}
+    路由Query username:{{this.$route.query.username}}
+ </p>
+  <p>
+    <!-- 使用 router-link 组件来导航. -->
+    <!-- 通过传入 `to` 属性指定链接. -->
+    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+    <router-link :to="{ name: 'HelloWorld', params: { id: 123 }}">HelloWorld</router-link>
+    <router-link to="/ifelse">ifelse</router-link>|
+    <router-link to="/computedjs">computedjs</router-link>|
+    <router-link to="/forjs">forjs</router-link>|
 
-  <img alt="Vue logo" src="./assets/logo.png">
-
+  </p>
+  <!-- 路由出口 -->
+  <!-- 路由匹配到的组件将渲染在这里 -->
+  <router-view>
+  <HelloWorld></HelloWorld>
+  <ifelse></ifelse></router-view>
   </div>
 </template>
 
 <script>
+// import ifelse from './components/ifelse.vue'
 
-
-import computedjs from './components/computedjs.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 
 export default {
   name: 'App',
   components: {
-   
-    computedjs
+   // HelloWorld,ifelse
+  },computed:{
+
+    username:function(){
+       // 我们很快就会看到 `params` 是什么
+      return this.$route.params.username
+    }
+
+  },methods:{
+
+    goback:function(){
+      window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
+    }
   }
 }
 </script>

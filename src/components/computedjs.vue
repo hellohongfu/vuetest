@@ -2,7 +2,7 @@
   <div id="test">
     <h2>computed 学习</h2>
     <p>原始字符串: {{ msg }}</p>
-     <p><input v-model="msg" ></p>
+     <p><input v-model="msggit " ></p>
     <p>计算后反转字符串: {{ reversedMessage }}</p>
   </div>
 </template>
